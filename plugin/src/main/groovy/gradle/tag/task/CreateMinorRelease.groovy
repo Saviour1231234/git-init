@@ -9,6 +9,7 @@ class CreateMinorRelease extends DefaultTask{
     @TaskAction
     def createMinorRelease() {
         def tags = GitUtils.getGitTagsResult
+
         println(tags)
 
         def tagsArray = tags.split("\n")
