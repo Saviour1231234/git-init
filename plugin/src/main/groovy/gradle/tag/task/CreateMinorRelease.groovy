@@ -29,7 +29,7 @@ class CreateMinorRelease extends DefaultTask{
         def gitHash = GitUtils.getGitCommitHash
         def checkCommitHash = GitUtils.getGitTagName(gitHash);
 
-        if (checkCommitHash.contains("\n")) {
+        if (!checkCommitHash.contains("\n")) {
             GitUtils.createTag(newVersion)
         }else {
             throw new GradleScriptException("That commit have an a tag already", null)
