@@ -24,6 +24,7 @@ class CreateMinorRelease extends DefaultTask{
         def currentMinor = Integer.parseInt(currentVersionSplitted[1]) + 1
         def newVersion = String.join(".", currentVersionSplitted[0], currentMinor as String)
 
+        println("new tag version $newVersion")
         /////////
         /////////
         def gitHash = GitUtils.getGitCommitHash
