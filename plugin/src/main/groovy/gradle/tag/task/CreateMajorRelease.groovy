@@ -23,7 +23,7 @@ class CreateMajorRelease extends DefaultTask{
 
         def newMajorVersion = Integer.parseInt(currentVersionSplitted[0].replaceAll("[^\\d.]", "")) + 1
 
-        def newVersion = String.join(".", newMajorVersion as String, "0")
+        def newVersion = String.join(".","v".concat(newMajorVersion as String) , "0")
 
         println("new tag version $newVersion")
         /////////

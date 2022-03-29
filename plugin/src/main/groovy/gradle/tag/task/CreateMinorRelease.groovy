@@ -40,8 +40,6 @@ class CreateMinorRelease extends DefaultTask{
         }else {
             throw new GradleScriptException("That commit have an a tag already", null)
         }
-        /////////
-        /////////
 
         ("git push origin $newVersion").execute()
     }
