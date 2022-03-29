@@ -15,9 +15,8 @@ class CreateMajorRelease extends DefaultTask{
 
         def tagsArray = tags.split("\n")
         tagsArray.toList().forEach {println it}
-        //dddd
 
-        def currentVersion = tagsArray[0]
+        def currentVersion = tagsArray[tagsArray.size() -1]
         println("current version = $currentVersion")
 
         def currentVersionSplitted = currentVersion.split('\\.')
